@@ -116,6 +116,9 @@ class BallRunnable implements Runnable
     public void run()
     {
         // TODO Auto-generated method stub
+        
+        
+        
         try
         {
             for(int i = 1; i <= BounceFrame.STEPS; i++)
