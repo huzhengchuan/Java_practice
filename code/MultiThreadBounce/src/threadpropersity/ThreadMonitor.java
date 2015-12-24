@@ -26,9 +26,23 @@ public class ThreadMonitor implements Runnable
             /* 当monitor线程被要求中断的时候, 通知所有的子线程中断 */
             for(Thread child : childThreads)
             {
+             //   System.out.println(childThreads.toString() + "is interrupted.");
                 child.interrupt();
             }
             
         }
+        for(Thread child : childThreads)
+        {
+            try
+            {
+                child.join();
+            }
+            catch(InterruptedException e)
+            {
+                // TODO Auto-generated catch block
+                System.out.println(e);
+            }
+        }
+        System.out.println("Thread monitor is end!");
     }
 }
